@@ -1,0 +1,42 @@
+{
+    "name": "Quick Fill App",
+    "version": "1.0",
+    "description": "watch on inputs and fill from csv file",
+    "manifest_version": 3,
+    "permissions": [
+      "tabs",
+      "scripting",
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "http://*/",
+      "http://localhost/",
+      "https://*/",
+      "*://*.google.com/"
+    ],
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js","assets/swal.js"],
+        "css":["assets/css/swal.css"], 
+        "run_at": "document_end"
+      }
+    ],
+    "action": {},
+    "web_accessible_resources": [
+      {
+        "resources": [ "index.html","assets/*"],
+        "matches":  ["<all_urls>"]
+      }
+    ],
+
+    "background": {
+      "service_worker": "background.js"
+    },
+    
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval' http://localhost:* http://127.0.0.1:*; object-src 'self'; script-src-elem 'self' https://cdn.jsdelivr.net"
+    }
+  }

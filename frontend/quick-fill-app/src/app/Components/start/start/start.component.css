@@ -1,0 +1,24 @@
+.fluid-container {
+    height: 573.7px;
+    
+}
+
+
+.contentBox {
+    border: 2px solid;
+    margin: 5px 38px 0px 15px !important;
+    padding: 3px 0px 10px 0px;
+    border-radius: 4px;
+    font-size: 12px;
+    overflow-x: auto;
+}
+
+.legendTitle {
+    font-size: 15px;
+    width: fit-content;
+    margin-left: 14px;
+    padding: 0px 4px;
+}
+/* .fluid-container{
+    min-height: 650px;
+} */
