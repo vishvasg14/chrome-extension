@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
     }
     this.httpRepositoryService.login(this.loginForm.value).subscribe(
       (response: any) => {
+        console.log('response', response);
         this.localStorageService.set('user', JSON.stringify(response));
         this.router.navigateByUrl('start');
       },
